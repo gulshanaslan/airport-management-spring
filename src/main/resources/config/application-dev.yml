@@ -1,0 +1,9 @@
+Swagger:
+  api-info:
+    title: "Airport Management System on Dev"
+    desc: "Airport Management System Spring Boot"
+    version: "1.0.0"
+    contact:
+      name: "Gulshan Aslanova"
+      url: "https://www.linkedin.com/in/gulshan-aslan"
+      mail: "gulshen.aslan@gmail.com"

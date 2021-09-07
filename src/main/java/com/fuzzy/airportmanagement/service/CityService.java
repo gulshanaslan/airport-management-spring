@@ -3,15 +3,14 @@ package com.fuzzy.airportmanagement.service;
 
 import com.fuzzy.airportmanagement.domain.City;
 import com.fuzzy.airportmanagement.domain.Country;
-import com.fuzzy.airportmanagement.dto.CityRequestDto;
-import com.fuzzy.airportmanagement.dto.CityResponseDto;
-import com.fuzzy.airportmanagement.dto.FilterResponseDto;
+import com.fuzzy.airportmanagement.dto.request.CityRequestDto;
+import com.fuzzy.airportmanagement.dto.response.CityResponseDto;
+import com.fuzzy.airportmanagement.dto.response.FilterResponseDto;
 import com.fuzzy.airportmanagement.mapper.CityMapper;
 import com.fuzzy.airportmanagement.repository.CityRepo;
 import com.fuzzy.airportmanagement.repository.CountryRepo;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;

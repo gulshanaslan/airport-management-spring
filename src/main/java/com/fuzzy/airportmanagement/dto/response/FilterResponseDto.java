@@ -1,4 +1,4 @@
-package com.fuzzy.airportmanagement.dto;
+package com.fuzzy.airportmanagement.dto.response;
 
 
 import lombok.AllArgsConstructor;

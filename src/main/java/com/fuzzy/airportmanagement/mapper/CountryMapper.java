@@ -2,8 +2,8 @@ package com.fuzzy.airportmanagement.mapper;
 
 
 import com.fuzzy.airportmanagement.domain.Country;
-import com.fuzzy.airportmanagement.dto.CountryRequestDto;
-import com.fuzzy.airportmanagement.dto.CountryResponseDto;
+import com.fuzzy.airportmanagement.dto.request.CountryRequestDto;
+import com.fuzzy.airportmanagement.dto.response.CountryResponseDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;
 

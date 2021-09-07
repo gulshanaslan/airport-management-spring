@@ -1,10 +1,9 @@
 package com.fuzzy.airportmanagement.controller;
 
-import com.fuzzy.airportmanagement.dto.CityRequestDto;
-import com.fuzzy.airportmanagement.dto.CityResponseDto;
-import com.fuzzy.airportmanagement.dto.FilterResponseDto;
+import com.fuzzy.airportmanagement.dto.request.CityRequestDto;
+import com.fuzzy.airportmanagement.dto.response.CityResponseDto;
+import com.fuzzy.airportmanagement.dto.response.FilterResponseDto;
 import com.fuzzy.airportmanagement.service.CityService;
-import io.swagger.models.auth.In;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.logging.Filter;
 
 @RestController
 @RequiredArgsConstructor

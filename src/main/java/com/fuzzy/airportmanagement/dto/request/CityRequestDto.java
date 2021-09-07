@@ -1,4 +1,4 @@
-package com.fuzzy.airportmanagement.dto;
+package com.fuzzy.airportmanagement.dto.request;
 
 
 import lombok.Getter;

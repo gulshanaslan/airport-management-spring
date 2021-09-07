@@ -1,8 +1,8 @@
 package com.fuzzy.airportmanagement.mapper;
 
 import com.fuzzy.airportmanagement.domain.City;
-import com.fuzzy.airportmanagement.dto.CityRequestDto;
-import com.fuzzy.airportmanagement.dto.CityResponseDto;
+import com.fuzzy.airportmanagement.dto.request.CityRequestDto;
+import com.fuzzy.airportmanagement.dto.response.CityResponseDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;
 

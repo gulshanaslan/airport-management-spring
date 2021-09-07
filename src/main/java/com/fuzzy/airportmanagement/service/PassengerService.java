@@ -1,8 +1,8 @@
 package com.fuzzy.airportmanagement.service;
 
 import com.fuzzy.airportmanagement.domain.Passenger;
-import com.fuzzy.airportmanagement.dto.PassengerRequestDto;
-import com.fuzzy.airportmanagement.dto.PassengerResponseDto;
+import com.fuzzy.airportmanagement.dto.request.PassengerRequestDto;
+import com.fuzzy.airportmanagement.dto.response.PassengerResponseDto;
 import com.fuzzy.airportmanagement.mapper.PassengerMapper;
 import com.fuzzy.airportmanagement.repository.PassengerRepo;
 import lombok.RequiredArgsConstructor;
@@ -47,11 +47,11 @@ public class PassengerService {
         return passenger;
     }
 
-    public PassengerResponseDto updatePassenger (Integer id, PassengerRequestDto passengerRequestDto){
+    public PassengerResponseDto updatePassenger(Integer id, PassengerRequestDto passengerRequestDto) {
         log.info("updatePassenger service started");
         Passenger passenger = passengerRepo.findById(id).orElseThrow(() -> new EntityNotFoundException
-                ("Passenger not found with: id"+id));
-        if (passengerRequestDto.getName() != null){
+                ("Passenger not found with: id" + id));
+        if (passengerRequestDto.getName() != null) {
             passenger.setName(passengerRequestDto.getName());
             passenger.setSurname(passengerRequestDto.getSurname());
             passenger.setPhone(passengerRequestDto.getPhone());
@@ -61,7 +61,6 @@ public class PassengerService {
         return passengerMapper.toPassengerResponseDto(updatedPassenger);
 
     }
-
 
 
 }

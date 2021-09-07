@@ -1,4 +1,4 @@
-package com.fuzzy.airportmanagement.dto;
+package com.fuzzy.airportmanagement.dto.response;
 
 
 import lombok.Getter;
@@ -6,13 +6,10 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class PassengerResponseDto {
-
+public class CityResponseDto {
 
     private Integer id;
     private String name;
-    private String surname;
-    private String phone;
+    private CountryResponseDto country;
     private Integer active;
-
 }

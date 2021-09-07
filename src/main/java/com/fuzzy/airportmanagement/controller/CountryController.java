@@ -1,9 +1,9 @@
 package com.fuzzy.airportmanagement.controller;
 
 import com.fuzzy.airportmanagement.domain.Country;
-import com.fuzzy.airportmanagement.dto.CountryRequestDto;
-import com.fuzzy.airportmanagement.dto.CountryResponseDto;
-import com.fuzzy.airportmanagement.dto.SuccessResponseDto;
+import com.fuzzy.airportmanagement.dto.request.CountryRequestDto;
+import com.fuzzy.airportmanagement.dto.response.CountryResponseDto;
+import com.fuzzy.airportmanagement.dto.response.SuccessResponseDto;
 import com.fuzzy.airportmanagement.service.CountryService;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 
 import java.util.List;
 

@@ -2,10 +2,16 @@ package com.fuzzy.airportmanagement.controller;
 
 
 import com.fuzzy.airportmanagement.domain.Passenger;
-import com.fuzzy.airportmanagement.dto.PassengerRequestDto;
-import com.fuzzy.airportmanagement.dto.PassengerResponseDto;
+import com.fuzzy.airportmanagement.dto.request.PassengerRequestDto;
+import com.fuzzy.airportmanagement.dto.response.PassengerResponseDto;
 import com.fuzzy.airportmanagement.service.PassengerService;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 

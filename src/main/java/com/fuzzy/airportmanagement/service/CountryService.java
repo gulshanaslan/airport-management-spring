@@ -1,9 +1,9 @@
 package com.fuzzy.airportmanagement.service;
 
 import com.fuzzy.airportmanagement.domain.Country;
-import com.fuzzy.airportmanagement.dto.CountryRequestDto;
-import com.fuzzy.airportmanagement.dto.CountryResponseDto;
-import com.fuzzy.airportmanagement.dto.SuccessResponseDto;
+import com.fuzzy.airportmanagement.dto.request.CountryRequestDto;
+import com.fuzzy.airportmanagement.dto.response.CountryResponseDto;
+import com.fuzzy.airportmanagement.dto.response.SuccessResponseDto;
 import com.fuzzy.airportmanagement.mapper.CountryMapper;
 import com.fuzzy.airportmanagement.repository.CountryRepo;
 import lombok.RequiredArgsConstructor;

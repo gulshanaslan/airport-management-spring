@@ -42,14 +42,16 @@ public class CountryService {
 
     public Country getCountryById(Integer id) {
         log.info("getCountryById service started");
-        Country country = countryRepo.findById(id).orElseThrow(() -> new EntityNotFoundException("Country not found with id:" + id));
+        //Country country = countryRepo.findById(id).orElseThrow(() -> new EntityNotFoundException("Country not found with id:" + id));
+        Country country = countryRepo.findById(id).get();
         log.info("getPassengerById service completed");
         return country;
     }
 
     public CountryResponseDto updateCountry(CountryRequestDto countryRequestDto, Integer id) {
         log.info("updateCountry service started");
-        Country country = countryRepo.findById(id).orElseThrow(() -> new EntityNotFoundException("Country not found with id:" + id));
+        //Country country = countryRepo.findById(id).orElseThrow(() -> new EntityNotFoundException("Country not found with id:" + id));
+        Country country = countryRepo.findById(id).get();
         if (countryRequestDto.getName() != null) {
             country.setName(countryRequestDto.getName());
         }

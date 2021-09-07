@@ -28,7 +28,8 @@ public class AirportService {
     public AirportResponseDto createAirport (AirportRequestDto airportRequestDto){
         log.info("createAirport service started");
         Airport airport = airportMapper.toAirport(airportRequestDto);
-        City city = cityRepo.findById(airportRequestDto.getCity_id()).orElseThrow(() -> new EntityNotFoundException("City not found"));
+        //City city = cityRepo.findById(airportRequestDto.getCity_id()).orElseThrow(() -> new EntityNotFoundException("City not found"));
+        City city = cityRepo.findById(airportRequestDto.getCity_id()).get();
         airport.setCity(city);
         Airport createdAirport = airportRepo.save(airport);
         log.info("createAirport service completed");

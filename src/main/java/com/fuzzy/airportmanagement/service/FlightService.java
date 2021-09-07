@@ -40,15 +40,18 @@ public class FlightService {
         log.info("createFlight service started");
         Flight flight = flightMapper.toFlight(flightRequestDto);
         if (flightRequestDto.getDepAirport_id() != null) {
-            Airport depAirport = airportRepo.findById(flightRequestDto.getDepAirport_id()).orElseThrow();
+            //Airport depAirport = airportRepo.findById(flightRequestDto.getDepAirport_id()).orElseThrow();
+            Airport depAirport = airportRepo.findById(flightRequestDto.getDepAirport_id()).get();
             flight.setDepAirport(depAirport);
         }
         if (flightRequestDto.getArrAirport_id() != null) {
-            Airport arrAirport = airportRepo.findById(flightRequestDto.getArrAirport_id()).orElseThrow();
+            //Airport arrAirport = airportRepo.findById(flightRequestDto.getArrAirport_id()).orElseThrow();
+            Airport arrAirport = airportRepo.findById(flightRequestDto.getArrAirport_id()).get();
             flight.setArrAirport(arrAirport);
         }
         if (flightRequestDto.getCompany_id() != null) {
-            Company company = companyRepo.findById(flightRequestDto.getCompany_id()).orElseThrow();
+            //Company company = companyRepo.findById(flightRequestDto.getCompany_id()).orElseThrow();
+            Company company = companyRepo.findById(flightRequestDto.getCompany_id()).get();
             flight.setCompany(company);
         }
         Flight createdFlight = flightRepo.save(flight);

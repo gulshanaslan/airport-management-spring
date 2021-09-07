@@ -41,16 +41,18 @@ public class PassengerService {
 
     public Passenger getPassengerById(Integer id) {
         log.info("getPassengerById service started");
-        Passenger passenger = passengerRepo.findById(id).orElseThrow(() -> new EntityNotFoundException
-                ("Passenger not found with: id" + id));
+        /*Passenger passenger = passengerRepo.findById(id).orElseThrow(() -> new EntityNotFoundException
+                ("Passenger not found with: id" + id));*/
+        Passenger passenger = passengerRepo.findById(id).get();
         log.info("getPassengerById service completed");
         return passenger;
     }
 
     public PassengerResponseDto updatePassenger(Integer id, PassengerRequestDto passengerRequestDto) {
         log.info("updatePassenger service started");
-        Passenger passenger = passengerRepo.findById(id).orElseThrow(() -> new EntityNotFoundException
-                ("Passenger not found with: id" + id));
+        /*Passenger passenger = passengerRepo.findById(id).orElseThrow(() -> new EntityNotFoundException
+                ("Passenger not found with: id" + id));*/
+        Passenger passenger = passengerRepo.findById(id).get();
         if (passengerRequestDto.getName() != null) {
             passenger.setName(passengerRequestDto.getName());
             passenger.setSurname(passengerRequestDto.getSurname());

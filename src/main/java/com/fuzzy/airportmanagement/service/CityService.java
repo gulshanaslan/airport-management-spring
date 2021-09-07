@@ -43,12 +43,13 @@ public class CityService {
         List<City> city = cityRepo.findAll(pageable).getContent();
         List<CityResponseDto> list = cityMapper.toCityResponseDtoList(city);
         log.info("getAllCityWithPage service completed with page : {} , size : {}", page, size);
-        return new FilterResponseDto<>(list,cityRepo.count(),list.size());
+        return new FilterResponseDto<>(list, cityRepo.count(), list.size());
     }
 
     public CityResponseDto getCityById(Integer id) {
         log.info("getCityById service started");
-        City city = cityRepo.findById(id).orElseThrow(() -> new EntityNotFoundException("City not found"));
+        //City city = cityRepo.findById(id).orElseThrow(() -> new EntityNotFoundException("City not found"));
+        City city = cityRepo.findById(id).get();
         log.info("getCityById service completed");
         return cityMapper.toCityResponseDto(city);
     }
@@ -56,8 +57,9 @@ public class CityService {
     public CityResponseDto createCity(CityRequestDto cityRequestDto) {
         log.info("creatCity service started");
         City city = cityMapper.toCity(cityRequestDto);
-        Country country = countryRepo.findById(cityRequestDto.getCountry_id()).orElseThrow(
-                () -> new EntityNotFoundException("Country not found with id: " + cityRequestDto.getCountry_id()));
+/*        Country country = countryRepo.findById(cityRequestDto.getCountry_id()).orElseThrow(
+                () -> new EntityNotFoundException("Country not found with id: " + cityRequestDto.getCountry_id()));*/
+        Country country = countryRepo.findById(cityRequestDto.getCountry_id()).get();
         city.setCountry(country);
         City createdCity = cityRepo.save(city);
         log.info("createCity service completed");
@@ -69,7 +71,8 @@ public class CityService {
         City city = cityRepo.findById(id).orElseThrow(() -> new EntityNotFoundException("City not found"));
         city.setName(cityRequestDto.getName());
         if (cityRequestDto.getCountry_id() != null) {
-            Country country = countryRepo.findById(cityRequestDto.getCountry_id()).orElseThrow();
+            //Country country = countryRepo.findById(cityRequestDto.getCountry_id()).orElseThrow();
+            Country country = countryRepo.findById(cityRequestDto.getCountry_id()).get();
             city.setCountry(country);
         }
         city.setActive(cityRequestDto.getActive());
